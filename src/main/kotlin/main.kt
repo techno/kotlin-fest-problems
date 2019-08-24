@@ -20,7 +20,7 @@ fun answer3(inputs: Int): Long {
 
 @UseExperimental(ExperimentalUnsignedTypes::class)
 fun answer4(input: Sequence<Int>): Int {
-    val a = ULongArray(100_000_000 / 64)
+    val a = ULongArray(100_000_000 / 64 + 1)
     input.forEach {
         a[it / 64] = a[it / 64].or((1UL).shl(it.rem(64)))
     }
